@@ -10,3 +10,5 @@ O trabalho consiste em rasterizar linhas pelo Algoritmo do Ponto Médio, usando 
 
 
 3- A última função é simplesmente realiza pela chamada da função anterior (DrawLine) fazendo uma chamada para cada aresta, resultando em 3 chamadas
+
+**Obtive warning apos o comando make no prompt, porem o mesmo esta declado no codigo como uma struct**
