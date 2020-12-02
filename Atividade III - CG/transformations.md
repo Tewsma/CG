@@ -12,6 +12,14 @@ Compilando o código template, temos:
 
 Modificar a matriz Model utilizandos os fatores (x, y, z) = (1/3, 3/2, 1)
 
+```
+float scale_array[16] = {1.0f/3.0f, 0.0f, 0.0f, 0.0f,
+                              0.0f, 1.5f, 0.0f, 0.0f,
+                              0.0f, 0.0f, 1.0f, 0.0f,
+                              0.0f, 0.0f, 0.0f, 1.0f};
+
+glm::mat4 model_mat = glm::make_mat4(scale_array);
+```
 Igualando a matriz Model à matriz de Escala, temos
 
 <img src = "https://github.com/Tewsma/CG/tree/main/Atividade III - CG/turopom/figura2.png">
