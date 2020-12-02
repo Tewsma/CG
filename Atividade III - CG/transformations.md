@@ -22,7 +22,7 @@ Igualando a matriz Model à matriz de Escala, temos
 
 <img src = "https://github.com/Tewsma/CG/tree/main/Atividade III - CG/turopom/figura2.png">
 
-## Segunda atividade - Tranlação
+## Segunda atividade - Translação
 
 Os fatores para aplicar a translação sao (x, y, z) = (1, 0, 0)
 
