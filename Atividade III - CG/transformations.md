@@ -23,3 +23,19 @@ glm::mat4 model_mat = glm::make_mat4(scale_array);
 Igualando a matriz Model à matriz de Escala, temos
 
 <img src = "https://github.com/Tewsma/CG/tree/main/Atividade III - CG/turopom/figura2.png">
+
+## Segunda atividade - Tranlacao
+
+Os fatores para aplicar a translação sao (x, y, z) = (1, 0, 0)
+
+```C++
+float trans_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
+                         0.0f, 1.0f, 0.0f, 0.0f,
+                         0.0f, 0.0f, 1.0f, 0.0f,
+                         1.0f, 0.0f, 0.0f, 1.0f};
+
+glm::mat4 model_mat = glm::make_mat4(trans_array);
+```
+Igualando a matriz Model à matriz de Translacao, temos
+
+<img src = "https://github.com/Tewsma/CG/tree/main/Atividade III - CG/turopom/figura3.png">
