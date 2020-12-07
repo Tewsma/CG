@@ -7,9 +7,8 @@ Foi utilizada a biblioteca GLM no código template.
 Compilando o código template, temos:
 
 <p align="center">
-  <img src="imagens/scala.png" >
+  <img src="imagens/figura1.png" >
 </p>
-
 
 ## Primera atividade - Escala
 
@@ -25,7 +24,10 @@ glm::mat4 model_mat = glm::make_mat4(scale_array);
 ```
 Igualando a matriz Model à matriz de Escala, temos
 
-<img src = "https://github.com/Tewsma/CG/tree/main/Atividade III - CG/turopom/figura2.png">
+<p align="center">
+  <img src="imagens/scala.png" >
+</p>
+
 
 ## Segunda atividade - Translação
 
@@ -41,7 +43,10 @@ glm::mat4 model_mat = glm::make_mat4(trans_array);
 ```
 Igualando a matriz Model à matriz de Translacao, temos
 
-<img src = "https://github.com/Tewsma/CG/tree/main/Atividade III - CG/turopom/figura3.png">
+<p align="center">
+  <img src="imagens/trans.png" >
+</p>
+
 
 ## Terceira atividade - Projeção
 
@@ -57,7 +62,9 @@ glm::mat4 proj_mat = glm::make_mat4(proj_array);
 ```
 Igualando a matriz de Projeção, temos
 
-<img src = "https://github.com/Tewsma/CG/tree/main/Atividade III - CG/turopom/figura3.png">
+<p align="center">
+  <img src="imagens/projecao.png" >
+</p>
 
 
 
