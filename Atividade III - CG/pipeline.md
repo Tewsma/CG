@@ -1,6 +1,6 @@
 # icg
 
-﻿## Atividade 3 Int CG - Transformations
+## Atividade 3 Introducao a CG - Transformations
 
 Foi utilizada a biblioteca GLM no código template.
 
