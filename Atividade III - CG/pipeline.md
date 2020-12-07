@@ -66,7 +66,58 @@ Igualando a matriz de Projeção, temos
   <img src="imagens/projecao.png" >
 </p>
 
+## Quarta atividade - Camera
 
+Foram definidos os parametros da camera:
+
+* Posicao da camera  (-0.1, 0.1,  0.1)
+* Posicao do Look_At ( 0.0, 0.0, -1.0)
+
+```C
+float look_at_array[3] = { 0.0f, 0.0f, -1.0f},
+      camPos_array[3]  = {-0.1f, 0.1f,  0.1f},
+      camUp_array[3]   = { 0.0f, 1.0f,  0.0f};
+
+glm::vec3 Look_At = glm::make_vec3(look_at_array);
+glm::vec3 camPos  = glm::make_vec3(camPos_array);
+glm::vec3 camUp   = glm::make_vec3(camUp_array);
+
+```
+
+Para obter o sistema da camera, utilizamos:
+
+* **`Zc = (camPos - LookAt)/||camPos - LookAt||`**
+* **`Xc = (Up x Zc)/||Up x Zc||`**
+* **`Yc = (Zc x Xc)`**
+
+```C
+
+glm::vec3 camZ = glm::make_vec3(glm::normalize(camPos - Look_At));
+glm::vec3 camX = glm::make_vec3(glm::normalize(glm::cross(camUp, camZ)));
+glm::vec3 camY = glm::make_vec3(glm::cross(camZ, camX));
+
+```
+E em seguida, calculamos Bt e a T e realizando a multiplicacao:
+
+```C
+float Bt_array[16] = {camX.x, camY.x, camZ.x, 0.0f,
+             	       camX.y, camY.y, camZ.y, 0.0f,
+              	       camX.z, camY.z, camZ.z, 0.0f,
+            	         0.0f,   0.0f,   0.0f, 1.0f};
+
+float T_array[16] = {1.0f,      0.0f,      0.0f, 0.0f,
+	             0.0f, 	 1.0f,      0.0f, 0.0f,
+	             0.0f, 	 0.0f,      1.0f, 0.0f,
+	            -camPos.x, -camPos.y, -camPos.z, 1.0f}; 
+	            
+glm::mat4 view_mat = glm::make_mat4(Bt_array) * glm::make_mat4(T_array) * glm::make_mat4(view_array);
+```
+
+Assim obtendo:
+
+<p align="center">
+  <img src="imagens/cam.png" >
+</p>
 
 
 ## Quinta atividade - Transformação Livre
