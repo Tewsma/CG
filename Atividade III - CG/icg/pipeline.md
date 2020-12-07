@@ -6,7 +6,7 @@ Foi utilizada a biblioteca GLM no código template.
 
 Compilando o código template, temos:
 
-![scale](https://github.com/Tewsma/CG/blob/main/Atividade%20III%20-%20CG/imagens/scale.png)
+![scala](https://github.com/Tewsma/CG/blob/main/Atividade%20III%20-%20CG/imagens/scala.png)
 
 ## Primera atividade - Escala
 
