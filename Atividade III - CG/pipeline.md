@@ -14,7 +14,7 @@ Compilando o código template, temos:
 
 Modificar a matriz Model utilizandos os fatores (x, y, z) = (1/3, 3/2, 1)
 
-```
+```C
 float scale_array[16] = {1.0f/3.0f, 0.0f, 0.0f, 0.0f,
                               0.0f, 1.5f, 0.0f, 0.0f,
                               0.0f, 0.0f, 1.0f, 0.0f,
@@ -33,7 +33,7 @@ Igualando a matriz Model à matriz de Escala, temos
 
 Os fatores para aplicar a translação sao (x, y, z) = (1, 0, 0)
 
-```
+```C
 float trans_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
                          0.0f, 1.0f, 0.0f, 0.0f,
                          0.0f, 0.0f, 1.0f, 0.0f,
@@ -52,7 +52,7 @@ Igualando a matriz Model à matriz de Translacao, temos
 
 Os fatores para aplicar a projeção é d = 1/8 na matriz de projeção
 
-```
+```C
 float proj_array[16] = {1.0f, 0.0f, 0.0f,   0.0f, 
                         0.0f, 1.0f, 0.0f,   0.0f, 
                         0.0f, 0.0f, 1.0f,  -8.0f, 
@@ -69,6 +69,53 @@ Igualando a matriz de Projeção, temos
 
 
 
+## Quinta atividade - Transformação Livre
+
+De inicio foi inserido um novo triangulo, um triangulo bonito na cor **verde** apos os ja existentes no codigo.
+
+```C
+float vertices[] = {               .
+                                   .
+                                   .
+                                   
+                     0.25f, -0.5f, -0.25f, 0.0f, 0.75f, 0.0f, // green triangle (middle)
+                     0.75f,  0.5f, -0.25f, 0.0f, 0.75f, 0.0f,
+                     1.50f, -0.5f, -0.25f, 0.0f, 0.75f, 0.0f}; 
+  
+```
+Para ser possivel a rasterizacao do triangulo, foi necessario alterar a linha `glDrawArrays(GL_TRIANGLES, 0, 6);` para `glDrawArrays(GL_TRIANGLES, 0, 3*3);` (3 triangulos com 3 vertices). Tambem foram aplicadas as transformacoes:
+
+* Escala            (0.5, 0.5, 1.5)
+* Translacao        (0.1, 0.2, 0.3)
+* Rotacao de 60° no eixo Y
+
+```C
+float l_scala_array[16] = {1/2.0f, 0.0f, 0.0f, 0.0f,
+                           0.0f, 0.5f, 0.0f, 0.0f,
+                           0.0f, 0.0f, 1.5f, 0.0f,
+                           0.0f, 0.0f, 0.0f, 1.0f};
+
+float l_trans_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
+                           0.0f, 1.0f, 0.0f, 0.0f,
+                           0.0f, 0.0f, 1.0f, 0.0f,
+                           0.1f, 0.2f, 0.3f, 1.0f};
+
+float yangle = glm::pi<float>()/3;
+float l_roty_array[16] = {glm::cos(yangle), 0.0f, -glm::sin(yangle), 0.0f,
+			               0.0f, 1.0f,              0.0f, 0.0f,
+			  -glm::sin(yangle), 0.0f,  glm::cos(yangle), 0.0f,
+				       0.0f, 0.0f,   	         0.0f, 1.0f};
+```
+
+Como solicitado na atividade, foi alterado a posicao e o Look_At da camera:
+
+* Posicao (0.4, 0.5,  0.2)
+* Look_At (0.1, 0.1, -1.2)
+
+Usando d = 0.5, como fator de projecao, obtemos:
+
+<p align="center">
+  <img src="imagens/livTrans.png" >
+</p>
 
 
-Repositório do material da disciplina de Introdução à Computação Gráfica do CI/UFPB.
