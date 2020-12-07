@@ -1,6 +1,6 @@
 # icg
 
-﻿# Atividade 3 Int CG - Transformations
+﻿## Atividade 3 Int CG - Transformations
 
 Foi utilizada a biblioteca GLM no código template.
 
@@ -50,13 +50,13 @@ Igualando a matriz Model à matriz de Translacao, temos
 
 ## Terceira atividade - Projeção
 
-Os fatores para aplicar a projeção é d = 1/2 na matriz de projeção
+Os fatores para aplicar a projeção é d = 1/8 na matriz de projeção
 
 ```
-float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
-                        0.0f, 1.0f, 0.0f, 0.0f, 
-                        0.0f, 0.0f, 1.0f, 0.0f, 
-                        0.0f, 0.0f, 0.0f, 1.0f};
+float proj_array[16] = {1.0f, 0.0f, 0.0f,   0.0f, 
+                        0.0f, 1.0f, 0.0f,   0.0f, 
+                        0.0f, 0.0f, 1.0f,  -8.0f, 
+                        0.0f, 0.0f, 0.125f, 0.0f};
 
 glm::mat4 proj_mat = glm::make_mat4(proj_array);
 ```
