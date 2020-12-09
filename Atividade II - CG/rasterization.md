@@ -4,13 +4,13 @@ O objetivo do trabalho eh implementar o Algoritmo do Ponto Medio. Sabendo que os
 
 Para alcançar o objetivo iremos implementar 3 funcoes, sao elas passadas pelo professor:
 
-* PutPixel
-* DrawLine
-* DrawTriangle
+* PutPixel()
+* DrawLine()
+* DrawTriangle()
 
 Sabendo que W eh a largura do monitor, utilizaremos a formula 4X + 4Y*W (dada no slide) para obter o primeiro byte de um certo pixel
 
-##PutPixel
+## PutPixel
 
 Como feito na Prova I, sera implementado a funcao PutPixel. Nessa funcao recebe como parametros as coordenadas do ponto (x, y), 
 como tambem sua cor, RGBA.
