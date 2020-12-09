@@ -1,8 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
 #include <GL/glut.h>
+#include <stdio.h>
 
 #include "core.h"
 #include "mygl.h"

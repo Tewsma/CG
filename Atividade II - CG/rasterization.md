@@ -128,5 +128,3 @@ void drawTriangle(pixel_t p1, pixel_t p2, pixel_t p3) {
 - https://www.pucsp.br/~jarakaki/cgpi/Algoritmos_reta_circulo.pdf
 - Slides do professor Christian
 
-
-EM DESENVOLVIMENTO =)
