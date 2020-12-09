@@ -36,6 +36,35 @@ void putPixel(pixel_t pixel) {
 
 ## Função DrawLine
 
+Para a rasterização de linha foi utilizado o algoritmo de Bresenham, dois pixels como parâmetros. Porem,esse algoritmo ele funciona apenas para retas no primeiro octante, ou seja, retas entre 0º e 45º, assim necessitando alterar o algoritmo.
+
+
+Primeiro passo foi identificar se os valores de x e y que compõem a reta crescem ou decrescem.
+
+<p align="left">
+  <img src="imagens/1.png" >
+</p>
+
+<p align="right">
+  <img src="imagens/2.png" >
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Função DrawTriangule
 
@@ -56,6 +85,7 @@ void drawTriangle(pixel_t p1, pixel_t p2, pixel_t p3) {
 ## Bibliografia
 
 - https://pt.wikipedia.org/wiki/Algoritmo_de_Bresenham
+- https://www.pucsp.br/~jarakaki/cgpi/Algoritmos_reta_circulo.pdf
 - Slides do professor Christian
 
 
