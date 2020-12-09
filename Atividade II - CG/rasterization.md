@@ -48,8 +48,20 @@ Primeiro passo foi identificar se os valores de x e y que compõem a reta cresce
 
 
 
+Na interpolacao de cores é feito uma comparacao de duas distancias assim indicando o quao proximo o pixel esta do pixel final. A medida  que o pixel se aproxima do pixel final, a cor ira se alterando conforme a aproximacao.
+
+Usando a formula de calcular a distancia entre dois pontos no espaço, dada por meio de suas coordernadas.
+
+<p align="center">
+  <img src="imagens/formula.png" >
+</p>
 
 
+```C
+double dist(pixel_t a, pixel_t b) {
+    return sqrt(pow(b.x-a.x, 2) + pow(b.y-a.y, 2));
+}
+```
 
 
 
