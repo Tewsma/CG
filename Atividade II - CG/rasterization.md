@@ -1,10 +1,14 @@
 ﻿# Atividade 2 Introducao a CG - Rasterization
 
-Nessa atividade sera implementado 3 funcoes, sao elas
+O objetivo do trabalho eh implementar o Algoritmo do Ponto Medio. Sabendo que os monitores tem uma matriz de pixel (quase sempre localizada no canta superior esquerdo) e que cada pixel possui 4 bytes (1 para cores vermelhas, 1 para cores verdes, 1 para cores azuis, 1 para opacidade).
+
+Para alcançar o objetivo iremos implementar 3 funcoes, sao elas passadas pelo professor:
 
 * PutPixel
 * DrawLine
 * DrawTriangle
+
+Sabendo que W eh a largura do monitor, utilizaremos a formula 4X + 4Y*W (dada no slide) para obter o primeiro byte de um certo pixel
 
 ##PutPixel
 
