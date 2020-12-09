@@ -39,13 +39,29 @@ void putPixel(pixel_t pixel) {
 Para a rasterização de linha foi utilizado o algoritmo de Bresenham, dois pixels como parâmetros. Porem,esse algoritmo ele funciona apenas para retas no primeiro octante, ou seja, retas entre 0º e 45º, assim necessitando alterar o algoritmo.
 
 
-Primeiro passo foi identificar se os valores de x e y que compõem a reta crescem ou decrescem.
+Primeiro passo foi identificar se os valores de x e y que compõem a reta crescem ou decrescem, no caso uma funcao inc() para retornar os valores.
 
 <p align="center">
   <img src="imagens/1e2.png" >
 </p>
 
-
+```C
+int inc(int a) {
+    int x;
+    
+    if(!a) 
+        x = 0;
+    else if(a < 0) 
+        x = -1;
+    else if(a > 0)
+        x = 1;
+    
+    return x;
+}
+    
+int incX = inc(b.x - a.x),
+    incY = inc(b.y - a.y);
+```
 
 
 Na interpolacao de cores é feito uma comparacao de duas distancias assim indicando o quao proximo o pixel esta do pixel final. A medida  que o pixel se aproxima do pixel final, a cor ira se alterando conforme a aproximacao.
@@ -63,15 +79,28 @@ double dist(pixel_t a, pixel_t b) {
 }
 ```
 
+A interpolação das cores acontece na função **interpolate()**:
+
+```C
+color_t interpolate(pixel_t iP, pixel_t mP, pixel_t fP) {
+    double p = dist(mP, fP)/dist(iP, fP);
+    
+    color_t newColor = {p*iP.color.r + (1-p)*fP.color.r,
+                        p*iP.color.g + (1-p)*fP.color.g,
+                        p*iP.color.b + (1-p)*fP.color.b,
+                        p*iP.color.a + (1-p)*fP.color.a};
+    
+    return newColor;
+}
+```
+* iP - Pixel Inicial
+* mP - Pixel Atual
+* fP - Pixen Final
 
 
-
-
-
-
-
-
-
+<p align="center">
+  <img src="imagens/figura3.png" >
+</p>
 
 
 
