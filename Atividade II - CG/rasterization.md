@@ -8,15 +8,14 @@ Para alcançar o objetivo iremos implementar 3 funcoes, sao elas passadas pelo p
 * DrawLine()
 * DrawTriangle()
 
-Sabendo que W eh a largura do monitor, utilizaremos a formula 4X + 4Y*W (dada no slide) para obter o primeiro byte de um certo pixel
+Sabendo que W eh a largura do monitor, utilizaremos a formula **`4*X + 4*Y*W`** (dada no slide das aulas) para obter o primeiro byte de um certo pixel
 
 ## PutPixel
 
 Como feito na Prova I, sera implementado a funcao PutPixel. Nessa funcao recebe como parametros as coordenadas do ponto (x, y), 
 como tambem sua cor, RGBA.
 
-Para descobrir em que posicao na memoria gravar, usa-se a fórmula:
-**`4*X + 4*Y*W`**, onde **W** é a largura da tela.
+Para descobrir em que posicao na memoria gravar, usa-se a fórmula citada acima
 
 ```C
 
