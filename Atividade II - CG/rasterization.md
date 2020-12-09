@@ -1,6 +1,6 @@
 ﻿# Atividade 2 Introducao a CG - Rasterization
 
-O objetivo do trabalho eh implementar o Algoritmo do Ponto Medio. Sabendo que os monitores tem uma matriz de pixel (quase sempre localizada no canta superior esquerdo) e que cada pixel possui 4 bytes (1 para cores vermelhas, 1 para cores verdes, 1 para cores azuis, 1 para opacidade).
+O objetivo do trabalho é implementar o Algoritmo do Ponto Medio. Sabendo que os monitores tem uma matriz de pixel (quase sempre localizada no canta superior esquerdo) e que cada pixel possui 4 bytes (1 para cores vermelhas, 1 para cores verdes, 1 para cores azuis, 1 para opacidade).
 
 Para alcançar o objetivo iremos implementar 3 funcoes, sao elas passadas pelo professor:
 
@@ -8,14 +8,14 @@ Para alcançar o objetivo iremos implementar 3 funcoes, sao elas passadas pelo p
 * DrawLine()
 * DrawTriangle()
 
-Sabendo que W eh a largura do monitor, utilizaremos a formula **`4*X + 4*Y*W`** (dada no slide das aulas) para obter o primeiro byte de um certo pixel
+Sabendo que W é a largura do monitor, utilizaremos a formula **`4*X + 4*Y*W`** (dada no slide das aulas) para obter o primeiro byte de um certo pixel
 
 ## PutPixel
 
-Como feito na Prova I, sera implementado a funcao PutPixel. Nessa funcao recebe como parametros as coordenadas do ponto (x, y), 
+Como feito na Prova I, sera implementado a função PutPixel. Nessa função recebe como parâmetros as coordenadas do ponto (x, y), 
 como tambem sua cor, RGBA.
 
-Para descobrir em que posicao na memoria gravar, usa-se a fórmula citada acima
+Para descobrir em que posição na memoria gravar, usa-se a fórmula citada acima
 
 ```C
 
@@ -36,10 +36,10 @@ void putPixel(pixel_t pixel) {
 
 ## Função DrawLine
 
-Para a rasterização de linha foi utilizado o algoritmo de Bresenham, dois pixels como parâmetros. Porem,esse algoritmo ele funciona apenas para retas no primeiro octante, ou seja, retas entre 0º e 45º, assim necessitando alterar o algoritmo.
+Para a rasterização de linha foi utilizado o algoritmo de Bresenham, dois pixels como parâmetros. Porem, esse algoritmo ele funciona apenas para retas no primeiro octante, ou seja, retas entre 0º e 45º, assim necessitando alterar o algoritmo.
 
 
-Primeiro passo foi identificar se os valores de x e y que compõem a reta crescem ou decrescem, no caso uma funcao inc() para retornar os valores.
+Primeiro passo foi identificar se os valores de x e y que compõem a reta crescem ou decrescem, no caso uma função inc() para retornar os valores.
 
 <p align="center">
   <img src="imagens/1e2.png" >
@@ -64,9 +64,9 @@ int incX = inc(b.x - a.x),
 ```
 
 
-Na interpolacao de cores é feito uma comparacao de duas distancias assim indicando o quao proximo o pixel esta do pixel final. A medida  que o pixel se aproxima do pixel final, a cor ira se alterando conforme a aproximacao.
+Na interpolação de cores é feito uma comparação de duas distâncias assim indicando o quao proximo o pixel esta do pixel final. A medida  que o pixel se aproxima do pixel final, a cor ira se alterando conforme a aproximação.
 
-Usando a formula de calcular a distancia entre dois pontos no espaço, dada por meio de suas coordernadas.
+Usando a formula de calcular a distância entre dois pontos no espaço, dada por meio de suas coordernadas.
 
 <p align="center">
   <img src="imagens/formula.png" >
@@ -97,7 +97,7 @@ color_t interpolate(pixel_t iP, pixel_t mP, pixel_t fP) {
 * mP - Pixel Atual
 * fP - Pixen Final
 
-Para gerar a cor do pixel atual, é realizado o cálculo: **`p*iP.color + (1-p)*fP.color`**, onde p eh calculado a partir da distância entre mP e fP e dividindo entre a distância iP e fP, assim formando um efeito degrade nas linhas.
+Para gerar a cor do pixel atual, é realizado o cálculo: **`p*iP.color + (1-p)*fP.color`**, onde p é calculado a partir da distância entre mP e fP e dividindo entre a distância iP e fP, assim formando um efeito degrade nas linhas.
 
 
 <p align="center">
@@ -108,7 +108,7 @@ Para gerar a cor do pixel atual, é realizado o cálculo: **`p*iP.color + (1-p)*
 
 ## Função DrawTriangule
 
-Essa funcao tem como objetivo desenhar o triangulo recebendo como parametro 3 pixels, bastando chamar a função **drawLine()** três vezes. (Fazendo com que as linhas se encontrem nos vertices respectivos)
+Essa função tem como objetivo desenhar o triângulo recebendo como parametro 3 pixels, bastando chamar a função **drawLine()** três vezes. (Fazendo com que as linhas se encontrem nos vértices respectivos)
 
 ```C
 void drawTriangle(pixel_t p1, pixel_t p2, pixel_t p3) {
