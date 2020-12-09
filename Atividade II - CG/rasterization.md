@@ -41,13 +41,10 @@ Para a rasterização de linha foi utilizado o algoritmo de Bresenham, dois pixe
 
 Primeiro passo foi identificar se os valores de x e y que compõem a reta crescem ou decrescem.
 
-<p align="left">
-  <img src="imagens/1.png" >
+<p align="center">
+  <img src="imagens/1e2.png" >
 </p>
 
-<p align="right">
-  <img src="imagens/2.png" >
-</p>
 
 
 
