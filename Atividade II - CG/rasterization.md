@@ -50,8 +50,13 @@ void drawTriangle(pixel_t p1, pixel_t p2, pixel_t p3) {
 ```
 
 <p align="center">
-  <img src="imagens/figura3.png" >
+  <img src="imagens/figura2.png" >
 </p>
+
+## Bibliografia
+
+- https://pt.wikipedia.org/wiki/Algoritmo_de_Bresenham
+- Slides do professor Christian
 
 
 EM DESENVOLVIMENTO =)
