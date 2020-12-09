@@ -97,6 +97,8 @@ color_t interpolate(pixel_t iP, pixel_t mP, pixel_t fP) {
 * mP - Pixel Atual
 * fP - Pixen Final
 
+Para gerar a cor do pixel atual, é realizado o cálculo: **`p*iP.color + (1-p)*fP.color`**, onde p eh calculado a partir da distância entre mP e fP e dividindo entre a distância iP e fP, assim formando um efeito degrade nas linhas.
+
 
 <p align="center">
   <img src="imagens/figura3.png" >
