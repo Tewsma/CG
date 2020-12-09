@@ -33,4 +33,25 @@ void putPixel(pixel_t pixel) {
   <img src="imagens/figura1.png" >
 </p>
 
+
+## Função DrawLine
+
+
+## Função DrawTriangule
+
+Essa funcao tem como objetivo desenhar o triangulo recebendo como parametro 3 pixels, bastando chamar a função **drawLine()** três vezes. (Fazendo com que as linhas se encontrem nos vertices respectivo)
+
+```C
+void drawTriangle(pixel_t p1, pixel_t p2, pixel_t p3) {
+    drawLine(p1, p2);
+    drawLine(p2, p3);
+    drawLine(p3, p1);
+}
+```
+
+<p align="center">
+  <img src="imagens/figura3.png" >
+</p>
+
+
 EM DESENVOLVIMENTO =)
