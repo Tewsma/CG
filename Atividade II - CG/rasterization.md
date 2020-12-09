@@ -39,7 +39,7 @@ void putPixel(pixel_t pixel) {
 
 ## Função DrawTriangule
 
-Essa funcao tem como objetivo desenhar o triangulo recebendo como parametro 3 pixels, bastando chamar a função **drawLine()** três vezes. (Fazendo com que as linhas se encontrem nos vertices respectivo)
+Essa funcao tem como objetivo desenhar o triangulo recebendo como parametro 3 pixels, bastando chamar a função **drawLine()** três vezes. (Fazendo com que as linhas se encontrem nos vertices respectivos)
 
 ```C
 void drawTriangle(pixel_t p1, pixel_t p2, pixel_t p3) {
